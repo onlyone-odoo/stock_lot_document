@@ -31,7 +31,7 @@ class StockLot(models.Model):
         return res
 
     def _handle_uploaded_excel(self, vals):
-        """Handle uploaded Excel file: create a document and link it."""
+        """Handle uploaded Excel file: create a document, convert to Spreadsheet, and link it."""
         if "x_excel_file" not in vals or not vals["x_excel_file"]:
             return
         self.ensure_one()
@@ -58,10 +58,42 @@ class StockLot(models.Model):
             "folder_id": False,  # Adjust if you want a specific folder
         }
         document = self.env["documents.document"].create(document_vals)
-        self.x_documento = document
+        # Auto-convert to Spreadsheet (archive original)
+        try:
+            new_spreadsheet_id = document.clone_xlsx_into_spreadsheet(
+                archive_source=True
+            )
+            if new_spreadsheet_id:
+                new_spreadsheet = self.env["documents.document"].browse(
+                    new_spreadsheet_id
+                )
+                self.x_documento = new_spreadsheet
+            else:
+                # Fallback to original if conversion fails
+                self.x_documento = document
+                # Log warning or raise if critical
+                self.env["bus.bus"]._sendone(
+                    self.env.user.partner_id,
+                    "simple_notification",
+                    {
+                        "title": _("Conversion Warning"),
+                        "message": _(
+                            "Excel converted but fallback to original. Check logs."
+                        ),
+                    },
+                )
+        except Exception as e:
+            # Handle conversion errors gracefully (e.g., invalid Excel)
+            self.x_documento = document
+            raise UserError(
+                _(
+                    "Upload successful, but conversion to Spreadsheet failed: %s. Please convert manually."
+                )
+                % str(e)
+            )
 
     def open_x_documento_spreadsheet(self):
-        """Open the linked document in preview mode to trigger Spreadsheet if possible."""
+        """Open the linked document in Spreadsheet mode."""
         self.ensure_one()
         if not self.x_documento:
             raise UserError(_("No document linked to this lot."))
@@ -77,7 +109,7 @@ class StockLot(models.Model):
                 "target": "current",
             }
         else:
-            # Open in kanban view for single doc to trigger preview dialog (conversion prompt for Excel)
+            # Fallback: Open in kanban for manual conversion (should be rare post-auto)
             return {
                 "type": "ir.actions.act_window",
                 "name": _("Document"),
