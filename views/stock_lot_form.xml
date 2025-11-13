@@ -1,16 +1,15 @@
 <odoo>
     <record id="view_stock_lot_form_inherit" model="ir.ui.view">
-    <field name="name">stock.lot.form.inherit</field>
-    <field name="model">stock.lot</field>
-    <field name="inherit_id" ref="stock.view_production_lot_form"/>
-    <field name="arch" type="xml">
-        <label for="total_value" position="before">
-            <field name="x_documento" string="Documento" widget="many2one"/>
-            <div class="row">
-                <button name="open_x_documento_spreadsheet" string="Abrir en Hoja de Cálculo" type="object" class="btn btn-secondary" invisible="not x_documento"/>
-            </div>
-            <br/>
-        </label>
-    </field>
-</record>
+        <field name="name">stock.lot.form.inherit</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='total_value']" position="before">
+                <field name="x_excel_file" filename="x_excel_filename" invisible="x_documento" string="Upload Excel"/>
+                <field name="x_excel_filename" invisible="1"/>
+                <field name="x_documento" string="Document"/>
+                <button name="open_x_documento_spreadsheet" string="Open in Spreadsheet" type="object" class="btn btn-secondary" invisible="not x_documento"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

@@ -8,7 +8,7 @@
     "website": "https://onlyone.odoo.com/",
     "license": "AGPL-3",
     "category": "Inventory",
-    "version": "18.0.2.2.1",
+    "version": "18.0.4.3.1",
     "development_status": "Production/Stable",
     "application": False,
     "installable": True,
@@ -16,8 +16,9 @@
         "python": [],
         "bin": [],
     },
-    "depends": ["stock", "documents", "spreadsheet", "stock_account"],
+    "depends": ["stock", "documents", "documents_spreadsheet", "spreadsheet"],
     "data": [
         "views/stock_lot_form.xml",
+        "wizards/stock_lot_document_wizard.xml",
     ],
 }
