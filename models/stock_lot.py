@@ -99,10 +99,10 @@ class StockLot(models.Model):
             raise UserError(_("No document linked to this lot."))
         doc = self.x_documento
         if doc.mimetype == "application/o-spreadsheet":
-            # Direct open in Spreadsheet
+            # Direct open in Spreadsheet using Enterprise action tag
             return {
                 "type": "ir.actions.client",
-                "tag": "spreadsheet",
+                "tag": "action_open_spreadsheet",
                 "params": {
                     "spreadsheet_id": doc.id,
                 },
