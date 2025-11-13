@@ -17,18 +17,18 @@
     </record>
 
     <!-- Action to Open Wizard -->
-    <record id="action_stock_lot_document_wizard" model="ir.actions.act_window">
+    <record id="action_stock_lot_document_wizard" model="ir.ui.view">
         <field name="name">Bulk Convert Lot Documents</field>
         <field name="res_model">stock.lot.document.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
 
-    <!-- Menu Item under Documents > Configuration -->
+    <!-- Menu Item under Documents Root -->
     <menuitem
         id="menu_stock_lot_document_wizard"
         name="Bulk Convert Lot Excels"
-        parent="documents.menu_documents_configuration"
+        parent="documents.menu_root"
         action="action_stock_lot_document_wizard"
         sequence="10"/>
 </odoo>
