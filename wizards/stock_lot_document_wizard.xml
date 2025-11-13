@@ -17,7 +17,7 @@
     </record>
 
     <!-- Action to Open Wizard -->
-    <record id="action_stock_lot_document_wizard" model="ir.ui.view">
+    <record id="action_stock_lot_document_wizard" model="ir.actions.act_window">
         <field name="name">Bulk Convert Lot Documents</field>
         <field name="res_model">stock.lot.document.wizard</field>
         <field name="view_mode">form</field>
