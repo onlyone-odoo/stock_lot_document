@@ -19,6 +19,7 @@
     "depends": ["stock", "documents", "documents_spreadsheet", "spreadsheet"],
     "data": [
         "security/ir.model.access.csv",
+        "security/documents_security.xml",
         "views/stock_lot_form.xml",
         "wizards/stock_lot_document_wizard.xml",
     ],
