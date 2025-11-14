@@ -25,11 +25,11 @@
         <field name="target">new</field>
     </record>
 
-    <!-- Menu Item under Stock Configuration -->
+    <!-- Menu Item parallel to Serial Numbers/Lots under Products -->
     <menuitem
         id="menu_stock_lot_document_wizard"
         name="Bulk Create Lots from Excels"
-        parent="stock.menu_stock_config"
+        parent="stock.menu_product"
         action="action_stock_lot_document_wizard"
-        sequence="10"/>
+        sequence="20"/>
 </odoo>
