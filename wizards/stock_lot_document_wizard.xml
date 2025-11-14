@@ -23,13 +23,16 @@
         <field name="res_model">stock.lot.document.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
+        <field name="groups_id" eval="[(4, ref('stock.group_stock_manager'))]"/> 
     </record>
 
-    <!-- Menu Item under Inventory Root (safe, always exists) -->
+    <!-- Menu Item visible with groups and icon -->
     <menuitem
         id="menu_stock_lot_document_wizard"
         name="Bulk Create Lots from Excels"
         parent="stock.menu_stock_root"
         action="action_stock_lot_document_wizard"
-        sequence="50"/>
+        groups="stock.group_stock_manager"
+        web_icon="stock,static/description/icon.png"
+        sequence="10"/>
 </odoo>
