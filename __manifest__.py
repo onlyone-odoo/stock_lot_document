@@ -18,7 +18,6 @@
     },
     "depends": ["stock", "documents", "documents_spreadsheet", "spreadsheet"],
     "data": [
-        "security/ir.model.access.csv",
         "views/stock_lot_form.xml",
     ],
 }
