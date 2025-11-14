@@ -4,7 +4,7 @@
         <field name="model">stock.lot</field>
         <field name="inherit_id" ref="stock.view_production_lot_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='total_value']" position="before">
+            <xpath expr="//field[@name='ref']" position="after">
                 <field name="x_excel_file" filename="x_excel_filename" invisible="x_documento" string="Upload Excel"/>
                 <field name="x_excel_filename" invisible="1"/>
                 <field name="x_documento" string="Document"/>
