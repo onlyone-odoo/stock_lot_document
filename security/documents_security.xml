@@ -3,7 +3,7 @@
         <!-- Global read all folders for stock managers (for wizard search/onchange) -->
         <record id="rule_stock_manager_folder_global_read" model="ir.rule">
             <field name="name">Stock Manager: global read documents.folder</field>
-            <field name="model_id" ref="documents.model_documents_folder"/>
+            <field name="model_id" ref="model_documents_folder"/>
             <field name="global" eval="True"/>
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
@@ -16,7 +16,7 @@
         <!-- Global read all documents for stock managers (for conversion/linking) -->
         <record id="rule_stock_manager_document_global_read" model="ir.rule">
             <field name="name">Stock Manager: global read documents.document</field>
-            <field name="model_id" ref="documents.model Documents_document"/>
+            <field name="model_id" ref="model_documents_document"/>
             <field name="global" eval="True"/>
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('stock.group_stock_manager'))]"/>
