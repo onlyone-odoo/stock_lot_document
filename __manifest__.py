@@ -20,6 +20,5 @@
     "data": [
         "security/ir.model.access.csv",
         "views/stock_lot_form.xml",
-        "wizards/stock_lot_document_wizard.xml",
     ],
 }
