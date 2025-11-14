@@ -4,12 +4,13 @@
         <field name="name">stock.lot.document.wizard.form</field>
         <field name="model">stock.lot.document.wizard</field>
         <field name="arch" type="xml">
-            <form string="Bulk Convert Excels to Spreadsheets">
+            <form string="Bulk Create Lots from Excels">
                 <group>
+                    <field name="product_id"/>
                     <field name="folder_id"/>
                 </group>
                 <footer>
-                    <button name="action_bulk_convert_and_link" string="Convert and Link" type="object" class="btn-primary"/>
+                    <button name="action_bulk_convert_and_link" string="Confirm / Create Lots" type="object" class="btn-primary"/>
                     <button string="Cancel" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
@@ -18,17 +19,17 @@
 
     <!-- Action to Open Wizard -->
     <record id="action_stock_lot_document_wizard" model="ir.actions.act_window">
-        <field name="name">Bulk Convert Lot Documents</field>
+        <field name="name">Bulk Create Lot Documents</field>
         <field name="res_model">stock.lot.document.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
 
-    <!-- Menu Item under Documents Root -->
+    <!-- Menu Item under Stock Configuration -->
     <menuitem
         id="menu_stock_lot_document_wizard"
-        name="Bulk Convert Lot Excels"
-        parent="documents.menu_root"
+        name="Bulk Create Lots from Excels"
+        parent="stock.menu_stock_config"
         action="action_stock_lot_document_wizard"
         sequence="10"/>
 </odoo>
