@@ -1,0 +1,55 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_lot_document
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-29 18:38+0000\n"
+"PO-Revision-Date: 2025-11-29 18:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_lot_document
+#: model:ir.model.fields,field_description:stock_lot_document.field_stock_lot__x_documento
+#: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
+msgid "Document"
+msgstr "Documento"
+
+#. module: stock_lot_document
+#: model:ir.model.fields,field_description:stock_lot_document.field_stock_lot__x_excel_filename
+msgid "Excel Filename"
+msgstr "Nombre Archivo Excel"
+
+#. module: stock_lot_document
+#: model:ir.model.fields,help:stock_lot_document.field_stock_lot__x_documento
+msgid "Linked document (Spreadsheet or Excel) with the same name as the lot."
+msgstr "Documento vinculado"
+
+#. module: stock_lot_document
+#: model:ir.model,name:stock_lot_document.model_stock_lot
+msgid "Lot/Serial"
+msgstr "Número de serie/lote"
+
+#. module: stock_lot_document
+#: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
+msgid "Open in Spreadsheet"
+msgstr "Abrir documento"
+
+#. module: stock_lot_document
+#: model:ir.model.fields,help:stock_lot_document.field_stock_lot__x_excel_file
+msgid ""
+"Temporary field to upload an Excel file, which will be converted to a "
+"document."
+msgstr "Campo temporal para subir Excell a convertir."
+
+#. module: stock_lot_document
+#: model:ir.model.fields,field_description:stock_lot_document.field_stock_lot__x_excel_file
+#: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
+msgid "Upload Excel"
+msgstr "Subir Excell (.xlsx)"
