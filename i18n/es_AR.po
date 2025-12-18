@@ -55,26 +55,26 @@ msgid "Upload Excel"
 msgstr "Subir Excell (.xlsx)"
 
 #. module: stock_lot_document
-#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:38
+#: code:models/stock_lot.py:38
 msgid "A document is already linked. Please remove it before uploading a new one."
 msgstr "Ya hay un documento vinculado. Por favor, elimínelo antes de subir uno nuevo."
 
 #. module: stock_lot_document
-#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:80
+#: code:models/stock_lot.py:80
 msgid "Conversion Warning"
 msgstr "Advertencia de Conversión"
 
 #. module: stock_lot_document
-#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:82
+#: code:models/stock_lot.py:82
 msgid "Excel converted but fallback to original. Check logs."
 msgstr "Excel convertido pero se volvió al original. Revise los registros."
 
 #. module: stock_lot_document
-#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:90
+#: code:models/stock_lot.py:90
 msgid "Upload successful, but conversion to Spreadsheet failed: %s. Please convert manually."
 msgstr "Carga exitosa, pero la conversión a Hoja de Cálculo falló: %s. Por favor, convierta manualmente."
 
 #. module: stock_lot_document
-#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:96
+#: code:models/stock_lot.py:96
 msgid "No document linked to this lot."
 msgstr "No hay ningún documento vinculado a este lote."
