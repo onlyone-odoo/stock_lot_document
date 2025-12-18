@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_mrp_production_form_inherit_lot_document" model="ir.ui.view">
+        <field name="name">mrp.production.form.inherit.lot.document</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_raw_ids']/tree" position="inside">
+                <field name="lot_id"/>
+                <field name="lot_id.x_documento" string="Document" invisible="not lot_id"/>
+                <button name="open_lot_documento_spreadsheet" string="Open in Spreadsheet" type="object" class="btn btn-secondary" invisible="not lot_id.x_documento"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
