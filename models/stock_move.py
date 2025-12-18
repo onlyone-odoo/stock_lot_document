@@ -11,6 +11,12 @@ class StockMove(models.Model):
         compute="_compute_first_lot_id",
         store=False,
     )
+    lot_x_documento = fields.Many2one(
+        "documents.document",
+        string="Lot Document",
+        related="first_lot_id.x_documento",
+        readonly=True,
+    )
 
     @api.depends("lot_ids")
     def _compute_first_lot_id(self):
