@@ -8,7 +8,7 @@
     "website": "https://onlyone.odoo.com/",
     "license": "AGPL-3",
     "category": "Inventory",
-    "version": "18.0.9.8.3",
+    "version": "18.0.9.8.4",
     "development_status": "Production/Stable",
     "application": False,
     "installable": True,

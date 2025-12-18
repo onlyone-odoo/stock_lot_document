@@ -39,7 +39,7 @@ msgstr "Número de serie/lote"
 #. module: stock_lot_document
 #: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
 msgid "Open in Spreadsheet"
-msgstr "Abrir documento"
+msgstr "Abrir rollo"
 
 #. module: stock_lot_document
 #: model:ir.model.fields,help:stock_lot_document.field_stock_lot__x_excel_file
@@ -53,3 +53,28 @@ msgstr "Campo temporal para subir Excell a convertir."
 #: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
 msgid "Upload Excel"
 msgstr "Subir Excell (.xlsx)"
+
+#. module: stock_lot_document
+#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:38
+msgid "A document is already linked. Please remove it before uploading a new one."
+msgstr "Ya hay un documento vinculado. Por favor, elimínelo antes de subir uno nuevo."
+
+#. module: stock_lot_document
+#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:80
+msgid "Conversion Warning"
+msgstr "Advertencia de Conversión"
+
+#. module: stock_lot_document
+#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:82
+msgid "Excel converted but fallback to original. Check logs."
+msgstr "Excel convertido pero se volvió al original. Revise los registros."
+
+#. module: stock_lot_document
+#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:90
+msgid "Upload successful, but conversion to Spreadsheet failed: %s. Please convert manually."
+msgstr "Carga exitosa, pero la conversión a Hoja de Cálculo falló: %s. Por favor, convierta manualmente."
+
+#. module: stock_lot_document
+#: model:stock.lot,python-code:stock_lot_document/models/stock_lot.py:96
+msgid "No document linked to this lot."
+msgstr "No hay ningún documento vinculado a este lote."
