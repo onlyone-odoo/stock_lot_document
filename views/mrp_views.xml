@@ -4,7 +4,7 @@
         <field name="model">mrp.production</field>
         <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='move_raw_ids']/tree" position="inside">
+            <xpath expr="//field[@name='move_raw_ids']/list" position="inside">
                 <field name="lot_id"/>
                 <field name="lot_id.x_documento" string="Document" invisible="not lot_id"/>
                 <button name="open_lot_documento_spreadsheet" string="Open in Spreadsheet" type="object" class="btn btn-secondary" invisible="not lot_id.x_documento"/>
