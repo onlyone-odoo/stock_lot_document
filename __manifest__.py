@@ -8,7 +8,7 @@
     "website": "https://onlyone.odoo.com/",
     "license": "AGPL-3",
     "category": "Inventory",
-    "version": "18.0.9.8.5",
+    "version": "18.0.9.9.5",
     "development_status": "Production/Stable",
     "application": False,
     "installable": True,
@@ -27,5 +27,6 @@
     "data": [
         "views/stock_lot_form.xml",
         "views/mrp_views.xml",
+        "views/sale_lot_menu.xml",
     ],
 }

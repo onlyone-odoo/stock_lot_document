@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Filtro de dominio para lotes con documento asociado -->
+    <record id="stock_lot_filter_with_document" model="ir.filters">
+        <field name="name">With Document</field>
+        <field name="model_id">stock.lot</field>
+        <field name="domain">[('x_documento', '!=', False)]</field>
+        <field name="context">{'group_by': []}</field>
+        <field name="is_default" eval="True"/>
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- Acción de ventana que reutiliza la estándar pero fuerza Kanban y el filtro -->
+    <record id="action_stock_lot_with_document" model="ir.actions.act_window">
+        <field name="name">Lots / Serial Numbers with Document</field>
+        <field name="res_model">stock.lot</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'default_view_type': 'kanban', 'search_default_stock_lot_filter_with_document': 1}</field>
+        <field name="search_view_id" ref="stock.view_stock_lot_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new lot/serial number
+            </p>
+        </field>
+    </record>
+
+    <!-- Menú bajo Ventas -->
+    <menuitem
+        id="menu_sale_stock_lot_with_document"
+        name="Lots with Document"
+        parent="sale.menu_sales"
+        action="action_stock_lot_with_document"
+        sequence="50"/>
+</odoo>
