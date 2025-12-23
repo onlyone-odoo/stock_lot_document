@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-29 18:38+0000\n"
-"PO-Revision-Date: 2025-11-29 18:38+0000\n"
+"POT-Creation-Date: 2025-12-23 15:23+0000\n"
+"PO-Revision-Date: 2025-12-23 15:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: stock_lot_document
+#: model_terms:ir.actions.act_window,help:stock_lot_document.action_stock_lot_with_document
+msgid "Create a new lot/serial number"
+msgstr "Crear nuevo lote"
 
 #. module: stock_lot_document
 #: model:ir.model.fields,field_description:stock_lot_document.field_stock_lot__x_documento
@@ -27,8 +32,19 @@ msgid "Excel Filename"
 msgstr "Nombre Archivo Excel"
 
 #. module: stock_lot_document
+#: model:ir.model.fields,field_description:stock_lot_document.field_stock_move__first_lot_id
+msgid "First Lot"
+msgstr "Primer Lote"
+
+#. module: stock_lot_document
 #: model:ir.model.fields,help:stock_lot_document.field_stock_lot__x_documento
+#: model:ir.model.fields,help:stock_lot_document.field_stock_move__lot_x_documento
 msgid "Linked document (Spreadsheet or Excel) with the same name as the lot."
+msgstr "Documento vinculado"
+
+#. module: stock_lot_document
+#: model:ir.model.fields,field_description:stock_lot_document.field_stock_move__lot_x_documento
+msgid "Lot Document"
 msgstr "Documento vinculado"
 
 #. module: stock_lot_document
@@ -37,9 +53,22 @@ msgid "Lot/Serial"
 msgstr "Número de serie/lote"
 
 #. module: stock_lot_document
+#: model_terms:ir.ui.view,arch_db:stock_lot_document.view_mrp_production_form_inherit_lot_document
 #: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
+#: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_tree_inherit
 msgid "Open in Spreadsheet"
-msgstr "Abrir rollo"
+msgstr "Abrir documento"
+
+#. module: stock_lot_document
+#: model:ir.actions.act_window,name:stock_lot_document.action_stock_lot_with_document
+#: model:ir.ui.menu,name:stock_lot_document.menu_sale_stock_lot_with_document
+msgid "Rollos"
+msgstr "Rollos"
+
+#. module: stock_lot_document
+#: model:ir.model,name:stock_lot_document.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de stock"
 
 #. module: stock_lot_document
 #: model:ir.model.fields,help:stock_lot_document.field_stock_lot__x_excel_file
@@ -53,28 +82,3 @@ msgstr "Campo temporal para subir Excell a convertir."
 #: model_terms:ir.ui.view,arch_db:stock_lot_document.view_stock_lot_form_inherit
 msgid "Upload Excel"
 msgstr "Subir Excell (.xlsx)"
-
-#. module: stock_lot_document
-#: code:models/stock_lot.py:38
-msgid "A document is already linked. Please remove it before uploading a new one."
-msgstr "Ya hay un documento vinculado. Por favor, elimínelo antes de subir uno nuevo."
-
-#. module: stock_lot_document
-#: code:models/stock_lot.py:80
-msgid "Conversion Warning"
-msgstr "Advertencia de Conversión"
-
-#. module: stock_lot_document
-#: code:models/stock_lot.py:82
-msgid "Excel converted but fallback to original. Check logs."
-msgstr "Excel convertido pero se volvió al original. Revise los registros."
-
-#. module: stock_lot_document
-#: code:models/stock_lot.py:90
-msgid "Upload successful, but conversion to Spreadsheet failed: %s. Please convert manually."
-msgstr "Carga exitosa, pero la conversión a Hoja de Cálculo falló: %s. Por favor, convierta manualmente."
-
-#. module: stock_lot_document
-#: code:models/stock_lot.py:96
-msgid "No document linked to this lot."
-msgstr "No hay ningún documento vinculado a este lote."
