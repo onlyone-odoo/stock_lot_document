@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_sale_order_form_inherit_lot_document" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.lot.document</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='component_lot_id']" position="after">
+                <button name="%(stock_lot_document.action_open_lot_spreadsheet)d" string="Open in Spreadsheet" type="action" class="btn btn-secondary" invisible="not component_lot_id.x_documento" groups="stock.group_stock_manager"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Action server to delegate open from component_lot_id -->
+    <record id="action_open_lot_spreadsheet" model="ir.actions.server">
+        <field name="name">Open Lot Spreadsheet</field>
+        <field name="model_id" ref="model_sale_order_line"/>
+        <field name="binding_model_id" ref="model_sale_order_line"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = record.component_lot_id.open_x_documento_spreadsheet() if record.component_lot_id else {'type': 'ir.actions.act_window_close'}
+        </field>
+    </record>
+</odoo>

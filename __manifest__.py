@@ -28,5 +28,6 @@
         "views/stock_lot_form.xml",
         "views/mrp_views.xml",
         "views/sale_lot_menu.xml",
+        "views/sale_order_line_views.xml",
     ],
 }
